@@ -1,4 +1,5 @@
 <?php
+$env = parse_ini_file(".env");
 
 // ctwitter_max3.php
 //
@@ -22,6 +23,7 @@ foreach ($argv as $key => $value) {
 }
 
 $t = new TwitterStream();
-$t->login(getenv("TWITTER_CONSUMER_KEY"),getenv("TWITTER_CONSUMER_SECRET"),getenv("TWITTER_ACCESS_TOKEN"),getenv("TWITTER_ACCESS_SECRET");
+
+$t->login($env["TWITTER_CONSUMER_KEY"], $env["TWITTER_CONSUMER_SECRET"], $env["TWITTER_ACCESS_TOKEN"], $env["TWITTER_ACCESS_SECRET"]);
 $t->start($terms);
 $t->start(array(), array('-180','-90','180','90'));    // search entire world for geo-coded tweets;

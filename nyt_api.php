@@ -1,4 +1,5 @@
 <?php
+$env = parse_ini_file(".env");
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
@@ -7,7 +8,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 */
 
 $query = array(
-  "api-key" => getenv("NYT_API_KEY"),
+  "api-key" => $env["NYT_API_KEY"],
   "q"=>"South Dakota"
 );
 curl_setopt($curl, CURLOPT_URL,

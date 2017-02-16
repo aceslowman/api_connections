@@ -1,4 +1,6 @@
 <?php
+$env = parse_ini_file(".env");
+
 // ctwitter_stream_max3.php
 //
 // this is a version of the geo tweets streaming server that works with twitter api 1.1
@@ -34,9 +36,9 @@
 
 include 'udp.php';        // udp data sending stuff
 
-$DESTINATION = getenv("UDP_HOST");
-$SENDPORT = getenv("UDP_SEND_PORT");
-$RECVPORT = getenv("UDP_REC_PORT");
+$DESTINATION = $env["UDP_HOST"];
+$SENDPORT = $env["UDP_SEND_PORT"];
+$RECVPORT = $env["UDP_REC_PORT"];
 
 
 

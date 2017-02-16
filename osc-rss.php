@@ -1,9 +1,10 @@
 <?php
+$env = parse_ini_file(".env");
 include 'udp.php';
 
-$DESTINATION = getenv("UDP_HOST");
-$SENDPORT = getenv("UDP_SEND_PORT");
-$RECVPORT = getenv("UDP_REC_PORT");
+$DESTINATION = $env["UDP_HOST"];
+$SENDPORT    = $env["UDP_SEND_PORT"];
+$RECVPORT    = $env["UDP_REC_PORT"];
 
     global $osc;
     global $kount;
